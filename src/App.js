@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+
+  updateSearchCity=(event)=>{
+    this.setState({
+      searchCity:event.target.value
+    });
+  }
+  
+  render() {
+    return (
+      <div>
+         <Form  onSubmit={this.getYourCity}>
+          <input style={{width:`20rem`,height:'3rem',color:'blue'}} id='city' onChange={this.updateSearchCity} type='text' placeholder='city name'/>
+          <Button style={{ width: '5rem' ,height:'2rem',backgroundColor:'red'}} type='submit' value='get city' >Explore!</Button>
+       
+       
+
+        </Form >
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
