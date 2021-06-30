@@ -5,7 +5,7 @@ import Form from'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Alertmsg from './Alertmsg';
+import Errormsg from './Errormsg';
 export class Forme extends Component {
 
   constructor(props) {
@@ -23,8 +23,6 @@ export class Forme extends Component {
 
 
  
-
-
 
 
   getData=async(event)=>{
@@ -62,7 +60,7 @@ export class Forme extends Component {
     render() {
         return (
   <>
-        <Alertmsg  alert={this.state.alert} error=
+        <Errormsg  alert={this.state.alert} error=
         {this.state.error}/>
             <Form onSubmit={this.getData}>
             <Form.Group>
@@ -70,7 +68,7 @@ export class Forme extends Component {
               <Form.Control placeholder="where would you like to explore?..." size="lg" type="text"  onChange={this.updateCity}  />
               
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="dark" type="submit">
               Explore!
             </Button>
           </Form>
@@ -79,7 +77,7 @@ export class Forme extends Component {
         {this.state.disalay &&
           <>
             <p>{this.state.cityData.display_name}</p>
-            <h5>{this.state.cityData.lon},{this.state.cityData.lat}</h5>
+            <h5> Longitude: {this.state.cityData.lon}, Latitude: {this.state.cityData.lat}</h5>
             <Image src={`https://maps.locationiq.com/v3/staticmap?key=pk.817cb7273867d605c2d5314fc4f44fd8&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10&size=500x500`} rounded />;
            
       </>}

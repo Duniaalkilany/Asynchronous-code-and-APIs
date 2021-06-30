@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Alert } from 'react-bootstrap'
-export class Alertmsg extends Component {
+export class Errormsg extends Component {
     render() {
         return (
             <div>
-                {this.props.alert&& <Alert variant={'danger'}>
+                {this.props.alert&& <Alert variant={'warning'}>
               {this.props.error}
   </Alert>}
                 
@@ -13,4 +13,4 @@ export class Alertmsg extends Component {
     }
 }
 
-export default Alertmsg
+export default Errormsg
