@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Errormsg from './Errormsg';
+import Weather from './components/Weather';
 export class Forme extends Component {
 
   constructor(props) {
@@ -16,13 +17,10 @@ export class Forme extends Component {
       disalay:false,
       error:'',
       alert:false,
-    
+    localWeatherData:[]
 
     };
   }
-
-
- 
 
 
   getData=async(event)=>{
@@ -31,26 +29,33 @@ export class Forme extends Component {
 
       const url=`https://eu1.locationiq.com/v1/search.php?key=pk.817cb7273867d605c2d5314fc4f44fd8&q=${this.state.cityName}&format=json`;
       const req=await axios.get(url);
+
+
+
+      //  const localReq =await axios.get('http://localhost:8000//weather?lat=47.60621&lon=-122.33207&searchQuery=seattle');
+
+         const localUrl=`${process.env.REACT_APP_CLIENT_SERVER}/weather?lat=31.95&lon=35.91&searchQuery=amman`;
+        const localReq = await axios.get(localUrl); 
       this.setState({
         cityData:req.data[0],
        disalay:true,
-       alert:false
+       alert:false,
+         localWeatherData:localReq.data
 
       });
-    }
-    catch(err){
+    } catch(err){
       this.setState(
         {error: `${err.message}: ${err.response.data.error}`,
       alert:true})
     }
-  }
+  };
 
 
   updateCity=(event)=>{
     event.preventDefault();
     this.setState({
       cityName:event.target.value,
-   
+
     });
   }
 
@@ -81,6 +86,12 @@ export class Forme extends Component {
             <Image src={`https://maps.locationiq.com/v3/staticmap?key=pk.817cb7273867d605c2d5314fc4f44fd8&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10&size=500x500`} rounded />;
            
       </>}
+   {this.state.localWeatherData.map( weatherData=>{
+return <Weather description={ weatherData.description} date={ weatherData.date}/>
+
+
+
+   })}
       </>
     );
   }
