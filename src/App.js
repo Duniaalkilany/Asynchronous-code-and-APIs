@@ -6,7 +6,7 @@ import Footer from './Footer';
 import { render as r } from 'react-dom';
 
 
-export class App extends Component {
+class App extends Component {
   render() {
     return (
       <div>
