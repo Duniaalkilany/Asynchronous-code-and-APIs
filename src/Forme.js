@@ -6,8 +6,8 @@ import Button from 'react-bootstrap/Button';
 import { Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Errormsg from './Errormsg';
-import WeatherData from './components/Weather';
- import Movie from './components/Movie';
+import Weather from './components/Weather';
+ import Movies from './components/Movies';
  class Forme extends Component {
 
   constructor(props) {
@@ -118,8 +118,8 @@ import WeatherData from './components/Weather';
       </>}
    {/* {this.state.localWeatherData.map( weatherData=>{
 return <Weather description={ weatherData.description} date={ weatherData.date}/> */}
- <WeatherData weatherInfo={this.state.weatherData}/>
- <Movie movieInfo={this.state.movieData}/>
+ <Weather weatherInfo={this.state.weatherData}/>
+ <Movies movieInfo={this.state.movieData}/>
 
    
    </div>
