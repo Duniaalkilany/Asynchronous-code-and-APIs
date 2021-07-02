@@ -3,7 +3,7 @@ import React, { Component } from 'react'
  import Forme from './Forme';
  import Header from './Header'
 import Footer from './Footer';
-import { render as r } from 'react-dom';
+
 
 
 class App extends Component {
