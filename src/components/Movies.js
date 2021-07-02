@@ -1,26 +1,22 @@
+
+
+
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card'
-
+import Movie from './Movie';
 
 class Movies extends React.Component {
     render() {
+        if (this.props.movieInfo.length === 0) {
+            return ('');}
+
         return (
-            this.props.movieInfo.map((data, index) => {
-                return (<div key={index}>
-                    <Card style={{ width: '18rem' }}>
-  <Card.Img style={{ width: '10rem' }} variant="top" src={data.image_url} />
-  <Card.Body>
-    <Card.Title>{data.title}</Card.Title>
-    <Card.Text>
-    <p>{data.overview} <br/>{data.average_votes}<br></br>{data.release_date}</p>
-    </Card.Text>   
-  </Card.Body>
-</Card>
-                           
-                </div>)
-            })
-                    
+           <div>
+             {this.props. movieInfo.map((data, index) => (
+            <Movie   title={data.title} image_url={data.image_url} overview={data.overview} average_votes={data.average_votes} total_votes={this.total_votes} release_date={data.release_date} popularity={data.popularity} />
+          ))}
+          
+            </div>             
         )
     }
 }
