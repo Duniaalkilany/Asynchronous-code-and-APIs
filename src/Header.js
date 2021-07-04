@@ -5,7 +5,7 @@ export class Header extends Component {
         return (
          <div>
             <h1 >
-              City Explorer
+            🔍 City Explorer 🔎
             </h1>
             </div>
         )

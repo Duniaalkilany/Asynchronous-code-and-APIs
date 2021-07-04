@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-
+import "./Footer.css"
 export class Footer extends Component {
     render() {
         return (
-            <p>&copy; Dunia Alkilany </p>
+            <p class='footer'>&copy; Dunia Alkilany 🇩🇰 </p>
         )
     }
 }

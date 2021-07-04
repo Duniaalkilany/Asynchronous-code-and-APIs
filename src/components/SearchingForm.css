@@ -1,0 +1,52 @@
+label.form-label {
+    font-family: 'Courier New', Courier, monospace;
+    /* text-shadow: 2px 2px 2px rgba(0,0,0,0.6); */
+    font-size: x-large;
+    display: inline-block;
+    font-weight: bolder;
+    margin-left: 570px;
+    color: black;
+  }
+
+
+  .btn-warning {
+    color: rgb(3, 14, 17);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: orange;
+    border: solid 4px  #0d0d0e;
+    box-shadow: 10px 10px 5px -2px rgba(56,56,56,0.75);
+    -webkit-box-shadow: 10px 10px 5px -2px rgba(56,56,56,0.75);
+    -moz-box-shadow: 10px 10px 5px -2px rgba(56,56,56,0.75);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 630px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .btn-warning:hover {
+    background-color:yellow;
+    border: solid 2px #373838;
+  }
+
+  #input{
+     
+   text-align: center;
+margin-left: 480px;
+width: 400px;
+height: 60px;
+  }
+
+  #group{
+display: inline;
+margin-left: 40px;
+
+
+  }
+
+  #form{
+      background-color: #373838;
+     
+  }
+

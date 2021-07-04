@@ -1,0 +1,25 @@
+#dstyle{
+    text-align: center;
+    margin-inline: 10px;
+    font-family: 'Courier New', Courier, monospace;
+   
+    color: black;
+    font-weight: bolder;
+  }
+  
+  
+  #ps{
+      background-color: gold;
+      
+  }
+  #ov{
+      background-color: rgb(44, 45, 46) ;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      color: white;
+  }
+  
+  
+  
+  
+  

@@ -8,6 +8,7 @@ import SearchingForm from  './components/SearchingForm'
 import Location from  './components/Location'
 import Weather from './components/Weather';
  import Movies from './components/Movies';
+
  class Main extends Component {
 
   constructor(props) {
@@ -32,7 +33,7 @@ import Weather from './components/Weather';
       const url=`https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityName}&format=json`;
       const req=await axios.get(url);
 
-
+      
 
       
       this.setState({
@@ -43,7 +44,7 @@ import Weather from './components/Weather';
       });
 
       this.getWeather();
-    this.getMovie()
+      this.getMovie();
 
 
     } catch(err){
@@ -51,8 +52,9 @@ import Weather from './components/Weather';
         {error: `${err.message}: ${err.response.data.error}`,
       alert:true})
     }
-   
+  
   };
+
  
   updateCity=(event)=>{
     event.preventDefault();
@@ -61,17 +63,17 @@ import Weather from './components/Weather';
 
     });
   
-
+    
   };
 
   getWeather=async()=>{
     
-    const expressWeatherUrl=`${process.env.REACT_APP_CLIENT_SERVER}/weather?lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
+    const weatherUrl=`${process.env.REACT_APP_CLIENT_SERVER}/weather?lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
     
-    const reqExpress=await axios.get(expressWeatherUrl);
-    console.log(expressWeatherUrl);
+    const reqWeather=await axios.get(weatherUrl);
+   
     this.setState({
-      weatherData:reqExpress.data
+      weatherData:reqWeather.data
      
     });
     console.log(this.state.weatherData);
@@ -81,9 +83,9 @@ import Weather from './components/Weather';
 
 
   getMovie=async()=>{
-    const expressMovieURL=`${process.env.REACT_APP_CLIENT_SERVER}/movie?query=${this.state.cityName}&limit=8`
-    console.log(expressMovieURL);
-    const reqMovie=await axios.get(expressMovieURL);
+    const movieUrl=`${process.env.REACT_APP_CLIENT_SERVER}/movie?query=${this.state.cityName}&limit=8`
+   
+    const reqMovie=await axios.get(movieUrl);
     this.setState({
       movieData:reqMovie.data
     });
@@ -105,6 +107,7 @@ import Weather from './components/Weather';
 
           <Location display_name ={this.state.cityData.display_name} 
           lon={this.state.cityData.lon} lat= {this.state.cityData.lat}/>
+  
 <Weather weatherInfo={this.state.weatherData}/>
  <Movies movieInfo={this.state.movieData}/>
            
