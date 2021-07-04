@@ -1,0 +1,27 @@
+
+
+#cards{
+  text-align: center;
+  margin-inline: 50px;
+  font-family: 'Courier New', Courier, monospace;
+ 
+  color: black;
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+#card{
+ margin-left: 15px;
+margin-bottom: 10px;
+display: flow-root;
+display: inline-table
+}
+.style{
+    background-color: brown;
+}
